@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --bg-color-dark: rgba(251, 254, 247, 1);
+    --light-color: rgba(232, 252, 255, 1);
+    --destaque-bright: rgba(243, 113, 45, 1);
+    --destaque-blue: rgba(47, 174, 191, 1);
+    --titulo: rgba(47, 174, 191, 1);
+    --form-border-color: rgba(47, 174, 191, 1);
+    --form-bg: rgba(251, 254, 247, 1);
+    --font: "Zen Maru Gothic", serif;
+}
+
+.dark-mode:root {
+    --bg-color-dark: rgba(26, 54, 74, 1);
+    --light-color: rgba(47, 174, 191, 1);
+    --titulo: rgba(190, 247, 255, 1);
+    --form-border-color: rgba(50, 98, 134, 1);
+    --form-bg: rgba(39, 75, 100, 1);
+}
+
+* {
+    font-family: var(--font);
+    font-weight: 700;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100vh;
+}
+
+/* HEADER */
+.cadastro__header {
+    background-color: var(--light-color);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10vw;
+}
+
+.cadastro__header--logo {
+    height: 5vh;
+}
+
+/* IMAGEM MAIN */
+.cadastro__main {
+    background-color: var(--bg-color-dark);
+}
+
+.cadastro__main--container {
+    display: flex;
+    height: 80vh;
+}
+
+.cadastro__main--div{
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cadastro__main--img {
+    width: 80%;
+}
+
+/* FORMULARIO */
+.cadastro__formulario {
+    width: 50%; 
+    height: 60vh;
+}
+
+.cadastro__form--titulo {
+    text-align: center;
+    color: var(--titulo);
+    font-size: 3rem;
+    padding: 5vh 0;
+}
+
+.cadastro__form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* INPUT*/
+.cadastro__form--input-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cadastro__form--input {
+    border: solid 3px var(--form-border-color);
+    border-radius: 1rem;
+    height: auto;
+    width: 100%;
+    background-color: var(--form-bg);
+    padding: 1rem;
+    margin: 2vh 0;
+    font-size: 1.5rem;
+    color: var(--titulo);
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.cadastro__form--label {
+    position: absolute;
+    left: 15px;
+    color: var(--titulo);
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    pointer-events: none;
+    transform: translateY(2.5rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+   }
+   
+.cadastro__form--input:focus, .cadastro__form--input:valid {
+    outline: none;
+    border: 3px solid var(--destaque-bright);
+}
+   
+.cadastro__form--input:focus + label,
+.cadastro__form--input:valid + label {
+    transform: translateY(-13%) scale(0.8);
+    background-image: linear-gradient(var(--bg-color-dark), var(--form-bg));
+    padding: 0 .2rem;
+    color: rgba(243, 113, 45, 1);
+}
+
+
+/*LINKS E CHECKBOX*/
+.cadastro__form--link-group {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 2rem;
+    margin: 2vh 0;
+    align-items: center;
+}
+
+.cadastro__form--label-check {
+    color: var(--destaque-blue);
+    position: relative;
+    cursor: pointer;
+}
+
+/*.cadastro__form--checkbox input {
+    display: none;
+    cursor: pointer;
+}
+.cadastro__form--checkbox input + label:before {
+    content: '';
+    cursor: pointer;
+    width: 36.5px;
+    height: 36.5px;
+    background-image: url('/src/imagens/unchecked-tarefa.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1vw;
+}
+
+.cadastro__form--checkbox input:checked + label:before {
+    background-image: url('/src/imagens/check-tarefa.png');
+}*/
+   
+.cadastro__form--checkbox input {
+    display: none;
+}
+.cadastro__form--checkbox input + label::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-color: #274B64;
+    border: 1px solid #274B64;
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+    
+}
+
+.cadastro__form--checkbox input:checked + label::before {
+    /* content: '$#10003;'; */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='50px' viewBox='0 -960 960 960' width='50px' fill='%2300F0FF'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cadastro__form--link {
+    text-decoration: none;
+    color: var(--destaque-bright);
+}
+
+.cadastro__form--link {
+    text-decoration: none;
+    color: var(--destaque-bright);
+}
+
+/*BOTÃO*/
+.cadastro__form--btn {
+    width: 100%;
+    height: 74px;
+    border: 2px solid var(--destaque-blue);
+    outline: none;
+    border-radius: 10px;
+    background-color: var(--destaque-blue);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+.cadastro__form--btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cadastro__form--btn:hover {
+    background-color: var(--destaque-bright);
+    transition: all 0.3s;
+    border-color: transparent;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width:1145px) {
+    .cadastro__form--link-group {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width:1000px) {
+    .cadastro__header {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .cadastro__main{
+        padding-top: 6vh;
+    }
+
+    .cadastro__main--container {
+        height: 84vh;
+    }
+
+    .cadastro__form--titulo {
+        font-size: 2.5rem;
+    }
+
+    .cadastro__form--input {
+        height: 55px; 
+        margin: 1vh 0;
+    }
+    .cadastro__form--label{
+        font-size: 1.75rem;
+    }
+    .cadastro__form--input:focus + label,
+    .cadastro__form--input:valid + label {
+        transform: translateY(-10%) scale(0.9);
+    }
+
+    .cadastro__form--link-group {
+        flex-direction: column;
+    }
+    .cadastro__form--link {
+        margin: 2vh;
+    }
+    .cadastro__form--btn {
+        font-size: 2rem;
+        height: 64px;
+    }
+}
+
+@media (max-width:580px) {
+    .cadastro__main--container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cadastro__main--div {
+        display: none;
+    }
+
+    .cadastro__formulario {
+        width: 100%;
+        margin-top: 2vh;
+    }
+    
+    .cadastro__form--input {
+        font-size: 1.3rem;
+        height: 45px;
+        font-size: 1.5rem;
+        margin: 1vh 0;
+    }
+    .cadastro__form--titulo {
+        font-size: 2rem;
+    }
+    .cadastro__form--link-group {
+        font-size: 1.5rem;
+    }
+    .cadastro__form--label-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
